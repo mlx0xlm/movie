@@ -1,0 +1,19 @@
+<?php
+$a= $block->getLoggedinCustomerId();
+$link="http://127.0.0.1/movie/pub/media/customer";
+?>
+<h3 style="color: red">INFO CUSTOMER</h3>
+<table>
+    <tr>
+        <td>Name</td>
+        <td><?php echo $a->getName()?></td>
+    </tr>
+    <tr>
+        <td>Image</td>
+        <td><img src="<?php echo $link.$a->getTwilioImage()?>"</td>
+    </tr>
+    <tr>
+        <td>Email</td>
+        <td><?php echo $a->getEmail()?></td>
+    </tr>
+</table>

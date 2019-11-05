@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="Packt::xero"
+             title="Xero"
+             module="Packt_Movie"
+             sortOrder="51"
+             resource="Packt_Movie::index"/>
+        <add
+                id="Packt::movieasdf"
+                title="My Page"
+                module="Packt_Movie"
+                sortOrder="72"
+                parent="Packt::xero"
+                action="movie/mypage"
+                resource="Packt_Movie::xero"
+        />
+
+        <add id="Packt::bai2"
+             title="Bai 2"
+             module="Packt_Movie"
+             sortOrder="51"
+             resource="Packt_Movie::index"/>
+        <add
+                id="Packt::movie2"
+                title="Table Magenest Actor"
+                module="Packt_Movie"
+                sortOrder="70"
+                parent="Packt::bai2"
+                action="movie/magenestmovie"
+                resource="Packt_Movie::movie"
+        />
+
+        <add
+                id="Packt::movie3"
+                title="Table Magenest Movie"
+                module="Packt_Movie"
+                sortOrder="71"
+                parent="Packt::bai2"
+                action="movie/magenestmoviex"
+                resource="Packt_Movie::movie"
+        />
+        <add
+                id="Packt::movie4"
+                title="Table Magenest Director"
+                module="Packt_Movie"
+                sortOrder="72"
+                parent="Packt::bai2"
+                action="movie/magenestdirector"
+                resource="Packt_Movie::movie"
+        />
+    </menu>
+</config>

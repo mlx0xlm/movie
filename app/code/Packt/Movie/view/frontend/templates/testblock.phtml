@@ -1,0 +1,18 @@
+<table>
+    <tr>
+        <th>Movie Name</th>
+        <th>Director</th>
+        <th>Actor</th>
+    </tr>
+    <?php
+    $movie = $block->getProductCollection();
+    $movie->getData();
+    foreach ($movie as $item): ?>
+    <tr>
+        <td><?php echo $item->getMovie();?></td>
+        <td><?php echo $item->getDirector();?></td>
+        <td><?php echo $item->getName();?></td>
+    </tr>
+    <?php endforeach;?>
+
+</table>

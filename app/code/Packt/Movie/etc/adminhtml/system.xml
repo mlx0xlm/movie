@@ -1,0 +1,57 @@
+<?xml	version="1.0"?>
+<config	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+    <system>
+        <!-- tao 1 the trong configuration-->
+        <tab	id="packt"	translate="label"	sortOrder="500">
+            <label>Magenest Test Chapter 6 </label>
+        </tab>
+        <!--tao 1 the con-->
+        <section	id="movie"	translate="label"	type="text"	sortOrder="100" showInDefault="1"	showInWebsite="1"	showInStore="1">
+            <label>SalesforceCRM config</label>
+            <!--tao 1trang -->
+            <tab>packt</tab>
+            <resource>Packt_Movie::index</resource>
+            <group	id="hellopage"	translate="label"	type="text"	sortOrder="1"
+                      showInDefault="1"	showInWebsite="1"	showInStore="1">
+                <label>Magenest	page settings</label>
+                <field	id="header_title"	translate="label"	type="text"
+                          sortOrder="1"	showInDefault="1"	showInWebsite="1"	showInStore="1">
+                         <label>Text Field</label>
+                </field>
+                <field	id="custom"	translate="label"	type="select"
+                          sortOrder="3"	showInDefault="1"	showInWebsite="1"	showInStore="1">
+                    <label>Custom select field</label>
+                     <source_model>Packt\Movie\Model\Config\Config</source_model>
+
+                </field>
+                <field	id="is_enabled"	translate="label"	type="select"
+                          sortOrder="2"	showInDefault="1"	showInWebsite="1"	showInStore="1">
+                      <label>Is	Enabled</label>
+                      <source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+                </field>
+
+                <field	id="test"	translate="label"	type="text"
+                          sortOrder="30"	showInDefault="1"	showInWebsite="1"	showInStore="1">
+                        <label>Magenest Movie</label>
+                         <frontend_model>Packt\Movie\Block\Adminhtml\Movie\GetNumRow</frontend_model>
+                    <depends>
+                        <field id="custom">1</field>
+                    </depends>
+                </field>
+                <field	id="Magenest_actor"	translate="label"	type="text"
+                          sortOrder="4"	showInDefault="1"	showInWebsite="1"	showInStore="1">
+                        <label>Magenest Actor</label>
+                    <frontend_model>Packt\Movie\Block\Adminhtml\MovieDirector\GetNumRow</frontend_model>
+                        <depends>
+                            <field id="custom">1</field>
+                        </depends>
+                </field>
+
+                <field id="reloadPage" translate="label comment" type="button" sortOrder="100" showInDefault="1" showInWebsite="1" showInStore="0">
+                    <label>Button Field</label>
+                </field>
+            </group>
+        </section>
+        <!--test -->
+    </system>
+</config>

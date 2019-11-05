@@ -1,0 +1,10 @@
+<?xml	version="1.0"?>
+<config	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:Event/etc/events.xsd">
+    <event name="movie_rating_save_after">
+        <observer name="change_rating" instance="Packt\Movie\Observer\ChangeRating"/>
+    </event>
+
+    <event name="admin_system_config_changed_section_movie">
+        <observer name="change_field_text" instance="Packt\Movie\Observer\ChangeFieldText"/>
+    </event>
+</config>

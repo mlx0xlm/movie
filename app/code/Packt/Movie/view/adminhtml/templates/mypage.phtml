@@ -1,0 +1,38 @@
+<?php
+    $list=$block->myFunction();
+    $sl=$block->getMyData();
+    $customer=$block->getCustomer();
+    $order=$block->getOrder();
+    $invoice=$block->getInvoice();
+    $credit=$block->getCredit();
+    $a=1;
+?>
+
+        <div class="col-m-4">
+            Numbers of module installed in Magento: <p><?php echo $list?></p>
+        </div>
+        <table >
+            <tr>
+                <td>Number of customer</td>
+                <td><?php echo count($sl->getData())?></td>
+            </tr>
+            <tr>
+                <td>Products</td>
+                <td><?php echo count($customer)?></td>
+            </tr>
+            <tr>
+                <td>Orders</td>
+                <td><?php echo count($order)?></td>
+            </tr>
+            <tr>
+                <td>Invoices</td>
+                <td><?php echo count($invoice)?></td>
+            </tr>
+            <tr>
+                <td>Credits</td>
+                <td><?php echo count($credit)?></td>
+            </tr>
+
+        </table>
+
+

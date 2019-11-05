@@ -1,0 +1,51 @@
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="../../../../../lib/internal/Magento/Framework/ObjectManager/etc/config.xsd">
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array">
+                <item name="packt_magenestmovie_data_source" xsi:type="string">Packt\Movie\Model\ResourceModel\GetMovie\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Packt\Movie\Model\ResourceModel\GetMovie\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_actor</argument>       <!-- ten bang -->
+            <argument name="resourceModel" xsi:type="string">Packt\Movie\Model\ResourceModel\GetMovie</argument>
+        </arguments>
+    </virtualType>
+
+    <!--Get movie director-->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array"> <!--luu y data source se duoc su dung o file ui_component-->
+                <item name="packt_magenestdirector_data_source" xsi:type="string">Packt\Movie\Model\ResourceModel\GetMovieDirector\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Packt\Movie\Model\ResourceModel\GetMovieDirector\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_director</argument>       <!-- ten bang -->
+            <argument name="resourceModel" xsi:type="string">Packt\Movie\Model\ResourceModel\GetMovieDirector</argument>
+        </arguments>
+    </virtualType>
+    <!--Get movie -->
+    <type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+        <arguments>
+            <argument name="collections" xsi:type="array"> <!--luu y data source se duoc su dung o file ui_component-->
+                <item name="movie_data_source" xsi:type="string">Packt\Movie\Model\ResourceModel\GetMovieMovie\Collection</item>
+            </argument>
+        </arguments>
+    </type>
+    <virtualType name="Packt\Movie\Model\ResourceModel\GetMovieMovie\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+        <arguments>
+            <argument name="mainTable" xsi:type="string">magenest_movie</argument>       <!-- ten bang -->
+            <argument name="resourceModel" xsi:type="string">Packt\Movie\Model\ResourceModel\GetMovieMovie</argument>
+        </arguments>
+    </virtualType>
+
+    <!--thằng này là của plugin cho chức năng thêm sản phẩm vào giỏ hàng-->
+    <type	name="Magento\Checkout\Model\Cart">
+        <plugin	name="PacktMovie::addToCart"
+                   type="Packt\Movie\Plugin\AddToCart"	sortOrder="1"	/>
+    </type>
+
+</config>

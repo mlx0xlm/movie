@@ -1,0 +1,26 @@
+<button class="myButton">Open Modal Login</button>
+<div id="popup-modal" hidden>
+    <form action="">
+        <table>
+            <tr><input type="text" placeholder="username"></tr>
+            <tr><input type="password" placeholder="password"></tr>
+        </table>
+    </form>
+</div>
+<script type="text/javascript">
+    require
+    (
+        ['jquery','Magento_Ui/js/modal/modal'],
+
+        function($, modal)
+        {
+            $('.myButton').on('click', function () {
+                var options = {
+
+                };
+                var popup = modal(options, $('#popup-modal'));
+                $('#popup-modal').modal('openModal');
+            });
+        }
+    );
+</script>
