@@ -1,5 +1,4 @@
 <?php
-
 namespace Packt\Movie\Controller\Adminhtml\MagenestMoviex;
 
 class NewContr extends \Magento\Backend\App\Action
@@ -21,6 +20,4 @@ class NewContr extends \Magento\Backend\App\Action
         $resultPage->getConfig()->getTitle()->prepend((__('New Controller')));
         return $resultPage;
     }
-
-
 }

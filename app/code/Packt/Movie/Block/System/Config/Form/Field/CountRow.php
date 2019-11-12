@@ -22,5 +22,4 @@ class CountRow extends \Magento\Framework\View\Element\Template
         $count=$collection->getData()->count();
         return $count;
     }
-
 }

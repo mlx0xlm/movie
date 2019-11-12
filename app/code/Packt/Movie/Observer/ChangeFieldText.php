@@ -6,26 +6,20 @@ use Magento\Framework\Event\ObserverInterface;
 use Magento\Framework\Event\Observer as EventObserver;
 use Magento\Framework\App\RequestInterface;
 use Magento\Framework\App\Config\Storage\WriterInterface;
-use Magento\Config\Model\Config\Factory as configFactory;
+use Magento\Framework\App\Config\ScopeConfigInterface;
 class ChangeFieldText implements ObserverInterface
 {
     const XML_PATH_FAQ_URL = 'movie/hellopage/header_title';
 
-    /**
-     * @var RequestInterface
-     */
     private $request;
-    protected $configWriter;
+    protected $configWriter, $scopeConfig;
 
-    /**
-     * ConfigChange constructor.
-     * @param RequestInterface $request
-     * @param WriterInterface $configWriter
-     */
     public function __construct(
+        ScopeConfigInterface $scopeConfig,
         RequestInterface $request,
         WriterInterface $configWriter
     ) {
+        $this->scopeConfig = $scopeConfig;
         $this->request = $request;
         $this->configWriter = $configWriter;
 
@@ -33,10 +27,11 @@ class ChangeFieldText implements ObserverInterface
 
     public function execute(EventObserver $observer)
     {
-        //$faqParams = $this->request->getParam();
-        //$urlKey = $faqParams['movie']['hellopage']['header_title']['value']; //Current faq_url value, Here you can filter current value
-        $urlKey='Pong';     /*gan gia tri cua $urlkey bang Pong sau do save*/
-        $this->configWriter->save('movie/hellopage/header_title', $urlKey);
+        $storeScope = \Magento\Store\Model\ScopeInterface::SCOPE_STORE;
+        $getValue = $this->scopeConfig->getValue(self::XML_PATH_FAQ_URL, $storeScope);
+        if($getValue =='Ping')
+            $getValue = 'Pong';
+        $this->configWriter->save('movie/hellopage/header_title', $getValue);
         return $this;
     }
 }

@@ -3,7 +3,6 @@
     <event name="movie_rating_save_after">
         <observer name="change_rating" instance="Packt\Movie\Observer\ChangeRating"/>
     </event>
-
     <event name="admin_system_config_changed_section_movie">
         <observer name="change_field_text" instance="Packt\Movie\Observer\ChangeFieldText"/>
     </event>

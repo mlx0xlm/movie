@@ -18,6 +18,5 @@ class SaveData extends \Magento\Framework\App\Action\Action
         $movieModel->setData($data)->save();
         $this->messageManager->addSuccessMessage('Add Done !');
         $this->_redirect("movie/magenestmovie");
-
     }
 }

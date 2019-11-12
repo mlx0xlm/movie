@@ -3,18 +3,8 @@ namespace Packt\Movie\Block\Adminhtml\Movie;
 use Magento\Backend\Block\Template\Context;
 use Magento\Config\Block\System\Config\Form\Field as BaseField;
 use Magento\Framework\Data\Form\Element\AbstractElement;
-use Magento\Framework\UrlInterface;
-use Zend\Uri\UriFactory;
-use Packt\Movie\Model\ResourceModel\GetMovie;
 class TestReadOnly extends BaseField
 {
-    /**
-     * Render element value
-     *
-     * @param      \Magento\Framework\Data\Form\Element\AbstractElement $element
-     * @return      string
-     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
-     */
     protected $_movieCollectionFactory;
     public function __construct(
         Context $context,

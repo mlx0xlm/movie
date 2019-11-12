@@ -13,7 +13,6 @@ class Save extends \Magento\Framework\App\Action\Action
     }
     public function execute()
     {
-
         $data = $this->getRequest()->getPostValue();
         $movieModel = $this->movie->create();
         $movieModel->setData($data)->save();

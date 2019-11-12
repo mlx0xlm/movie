@@ -1,5 +1,4 @@
 <?php
-
 namespace Packt\Movie\Controller\Adminhtml\MagenestMoviex;
 
 class Index extends \Magento\Backend\App\Action
@@ -21,6 +20,4 @@ class Index extends \Magento\Backend\App\Action
         $resultPage->getConfig()->getTitle()->prepend((__('Magenest Movie')));
         return $resultPage;
     }
-
-
 }

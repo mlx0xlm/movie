@@ -8,13 +8,6 @@ use Zend\Uri\UriFactory;
 use Packt\Movie\Model\ResourceModel\GetMovie;
 class GetNumRow extends BaseField
 {
-    /**
-     * Render element value
-     *
-     * @param      \Magento\Framework\Data\Form\Element\AbstractElement $element
-     * @return      string
-     * @SuppressWarnings(PHPMD.UnusedFormalParameter)
-     */
     protected $_movieCollectionFactory;
     public function __construct(
         Context $context,

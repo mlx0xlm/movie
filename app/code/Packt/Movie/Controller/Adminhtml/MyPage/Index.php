@@ -14,13 +14,10 @@ class Index extends \Magento\Backend\App\Action
         parent::__construct($context);
         $this->resultPageFactory = $resultPageFactory;
     }
-
     public function execute()
     {
         $resultPage = $this->resultPageFactory->create();
         $resultPage->getConfig()->getTitle()->prepend((__('Test Backend')));
         return $resultPage;
     }
-
-
 }

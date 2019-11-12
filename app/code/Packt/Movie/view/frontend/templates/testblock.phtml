@@ -8,10 +8,11 @@
     $movie = $block->getProductCollection();
     $movie->getData();
     foreach ($movie as $item): ?>
+    $a=1;
     <tr>
         <td><?php echo $item->getMovie();?></td>
         <td><?php echo $item->getDirector();?></td>
-        <td><?php echo $item->getName();?></td>
+        <td><?php echo $item->getActor();?></td>
     </tr>
     <?php endforeach;?>
 

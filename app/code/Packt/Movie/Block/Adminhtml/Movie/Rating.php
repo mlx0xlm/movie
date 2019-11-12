@@ -29,11 +29,13 @@ class Rating extends Column
             foreach ($dataSource['data']['items'] as & $item) {
                 $fieldName = $this->getData('name');
                 $rating = '';
-                $loop = $item['rating'];
-                for ($i = 0; $i < $loop; $i++) {
+                $x= $item['rating'];
+                // lặp số sao
+                for ($i = 0; $i < $x; $i++) {
                     $rating .= "<label style=\"color: darkred;\">★</label>";
                 }
-                for ($i = $loop; $i < 5; $i++) {
+                //
+                for ($i = $x; $i < 5; $i++) {
                     $rating .= "<label  style=\"color: rgb(204, 204, 204);\">★</label>";
                 }
                 $item[$fieldName] = $rating;
